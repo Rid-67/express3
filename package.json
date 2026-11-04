@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "express": "^5.3.0",
+    "tailwindcss": "^4.3.4"
+  },
+  "name": "express3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "tailwind:dev":"@tailwindcss/cli -i ./src/css/style.css -o ./public/css/output.css --watch",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+  }

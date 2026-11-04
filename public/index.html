@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Diri</title>
+</head>
+<body>
+    <h1>Tambah data siswa</h1>
+
+    <form >
+<label for="idbuku">ID Buku:</label>
+<input type="text" id="idbuku" name="idbuku">
+
+<label for="judulbuku">Judul Buku:</label>
+<input type="text" id="judulbuku" name="judulbuku">
+
+<label for="penulis ">Penulis:</label>
+<input type="text" id="penulis" name="penulis">
+
+<label for="tahun terbit">Tahun Terbit:</label>
+<input type="text" id="tahun terbit" name="tahun terbit">
+
+<label for="isbn">ISBN:</label>
+<input type="text" id="isbn" name="isbn">
+
+<label for="kategori">Kategori:</label>
+<input type="text" id="kategori" name="kategori">
+
+
+<button type="submit">Tambah</button>
+
+    </form>
+
+</body>
+</html>
