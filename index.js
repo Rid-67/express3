@@ -2,36 +2,42 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const buku=[];
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const buku = [];
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.use(express.static('public'));  
-
-app.get('/getdata', (req, res) => {
-    res.json(buku);
+app.post('/tambahBuku',(req,res)=>{
+    buku.push(req.body);
+    res.redirect('/getDataBuku');
 });
 
-app.get('/getDataSiswa', (req, res) => {
+app.get('/getDataBuku', (req, res) => {
     let html = `
-    <h1>Data Siswa</h1>
+    <h1>Data Buku</h1>
     <table border="1">
         <tr>
-            <th>Id</th>
-            <th>Nama</th>
-            <th>Umur</th>
-            <th>Pekerjaan</th>
+            <th>IdBuku</th>
+            <th>JudulBuku</th>
+            <th>penulis</th>
+            <th>TahunTerbit</th>
+            <th>ISBN</th>
+            <th>Kategori</th>
         </tr>
 `;
-    siswa.forEach(s => {
+    buku.forEach(s => {
         html += `
         <tr>
-            <td>${s.id}</td>
-            <td>${s.nama}</td>
-            <td>${s.umur}</td>
-            <td>${s.pekerjaan}</td>
+            <td>${s.idbuku}</td>
+            <td>${s.judulbuku}</td>
+            <td>${s.penulis}</td>
+            <td>${s.tahunterbit}</td>
+            <td>${s.isbn}</td>
+            <td>${s.kategori}</td>
         </tr>
         `;
     });
@@ -41,6 +47,8 @@ app.get('/getDataSiswa', (req, res) => {
     res.send(html);
 });
 
+
+
 app.listen(port, () => {
-console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
